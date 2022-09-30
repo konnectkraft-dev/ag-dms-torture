@@ -1,0 +1,8 @@
+#!/bin/bash
+ARGS=$@
+
+ARGS=$(echo $ARGS | sed "s#^#--headless --ignore-certificate-errors #")
+
+printf "\nModified chrome ARGS: $ARGS\n"
+
+exec /usr/bin/google-chrome-bin $ARGS
